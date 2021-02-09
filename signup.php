@@ -37,17 +37,25 @@
                   <span class="mid1"> <label class="title">Your Name</label> <input type="text" size="8" name="cname" id="cname" required="required"/> </span>
                   <span class="mid1"> <label class="title">Email ID</label> <input type="email" size="20" name="emailid" id="emailid" required="required"/> </span> 
                   <span class="mid1"> <label class="title">Phone Number</label> <input type="number" size="10" name="phone" id="phone" required="required"/> </span> 
-                  <label class="subtitle" style="color:red;" id="errPhone"></label>
+                  
                   <span class="mid1"> <label class="title">Your Password</label> <input type="password" name="password" id="password"/> </span> 
                   <span class="mid1"> <label class="title">Confirm Your Password</label> <input type="password"  name="cpassword" id="cpassword" /> </span> 
                   <label class="subtitle" style="color:red;" id="errPass"></label>
-
+                  <span class="mid1"> <label class="title">Choose Security Question</label> 
+                    <select name="secquestion" required>
+                    <option value="Name of favorite Teacher?">Name of favorite Teacher?</option>
+                    <option value="Name of primary School?">Name of primary School?</option>
+                    <option value="Name of Birthplace?">Name of Birthplace?</option>
+                    </select>
+                    </span>
+                    <span class="mid1"> <label class="title">Enter answer for security question:</label> 
+                    <input type="password" name="secanswer" id="password" required/> </span>
                    <label class="title">Address</label> <textarea rows="4" cols="50" name="address"></textarea>
 
                </div>
+               <label class="subtitle" style="color:red;" id="errPhone"></label>
 
-
-                <div class="submit"><input type="submit" value="Submit" onclick="return check();"/></div>
+                <div class="submit"><input type="button" value="Submit" onclick="return check();"/></div>
             </form>
     </section>
     <!-- inspection section finish -->
@@ -85,12 +93,14 @@
     
             
     function check() {
+        
         //if the username is not available than the user is not allowed to submit
         document.getElementById("errPhone").innerHTML="";
         if (allowed == 0)
             return false;
         var ans=1;
         var name = document.getElementById('cname').value;
+        alert(name);
         var uname = document.getElementById('uname').value;
         var emailid = document.getElementById('emailid').value;
         var phone = document.getElementById('phone').value;
@@ -98,6 +108,7 @@
         var cpassword = document.getElementById('cpassword').value;
         var address = document.getElementById('address').value;
         if (phone.length != 10) {
+            alert('hi');
             document.getElementById("errPhone").innerHTML = "Phone number invalid!";
             ans=0;
         } 
