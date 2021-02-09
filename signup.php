@@ -34,12 +34,12 @@
                   <span class="mid1"> <label class="title">Your Username</label> <input type="text" size="8" name="uname" required="required" onkeyup="checkUsername(this.value)"/> 
                     <label class="subtitle" style="color:red;" id="errMsg"></label>
                   </span> 
-                  <span class="mid1"> <label class="title">Your Name</label> <input type="text" size="8" name="cname" required="required"/> </span>
-                  <span class="mid1"> <label class="title">Email ID</label> <input type="email" size="20" name="emailid" required="required"/> </span> 
-                  <span class="mid1"> <label class="title">Phone Number</label> <input type="number" size="10" name="phone" required="required"/> </span> 
+                  <span class="mid1"> <label class="title">Your Name</label> <input type="text" size="8" name="cname" id="cname" required="required"/> </span>
+                  <span class="mid1"> <label class="title">Email ID</label> <input type="email" size="20" name="emailid" id="emailid" required="required"/> </span> 
+                  <span class="mid1"> <label class="title">Phone Number</label> <input type="number" size="10" name="phone" id="phone" required="required"/> </span> 
                   <label class="subtitle" style="color:red;" id="errPhone"></label>
-                  <span class="mid1"> <label class="title">Your Password</label> <input type="password" name="password"/> </span> 
-                  <span class="mid1"> <label class="title">Confirm Your Password</label> <input type="password"  name="cpassword"/> </span> 
+                  <span class="mid1"> <label class="title">Your Password</label> <input type="password" name="password" id="password"/> </span> 
+                  <span class="mid1"> <label class="title">Confirm Your Password</label> <input type="password"  name="cpassword" id="cpassword" /> </span> 
                   <label class="subtitle" style="color:red;" id="errPass"></label>
 
                    <label class="title">Address</label> <textarea rows="4" cols="50" name="address"></textarea>
@@ -82,43 +82,40 @@
         }
     }
 
+    
+            
     function check() {
         //if the username is not available than the user is not allowed to submit
+        document.getElementById("errPhone").innerHTML="";
         if (allowed == 0)
             return false;
-        else
-        {
-            var name=document.getElementById('cname')
-            var uname=document.getElementById('uname')
-            var emailid=document.getElementById('emailid')
-            var phone=document.getElementById('phone')
-            var password=document.getElementById('password')
-            var cpassword=document.getElementById('cpassword')
-            var address=document.getElementById('address')
-            if(phone.length!=10)
-            {
-                document.getElementById("errPhone").innerHTML = "Phone number invalid!";
-                alert('hello');
-                return false;
-            }
-            else if(password.length<=8)
-            {
-                document.getElementById("errPhone").innerHTML = "";
-                document.getElementById("errPhone").innerHTML = "Password length should be greater than 8!";
-                return false;
-            }
-            else if(!password.equals(cpassword))
-            {
-                document.getElementById("errPhone").innerHTML = "";
-                document.getElementById("errPhone").innerHTML = "Passwords don't match!";
-                return false;
-            }
-            /* else
-            {
-                document.getElementById("myForm").submit();
-            } */
+        var ans=1;
+        var name = document.getElementById('cname').value;
+        var uname = document.getElementById('uname').value;
+        var emailid = document.getElementById('emailid').value;
+        var phone = document.getElementById('phone').value;
+        var password = document.getElementById('password').value;
+        var cpassword = document.getElementById('cpassword').value;
+        var address = document.getElementById('address').value;
+        if (phone.length != 10) {
+            document.getElementById("errPhone").innerHTML = "Phone number invalid!";
+            ans=0;
+        } 
+        if (password.length <= 8) {
+            document.getElementById("errPhone").innerHTML += "<br>";
+            document.getElementById("errPhone").innerHTML += "Password length should be greater than 8!";
+            ans=0;
+        } 
+        if (password!=cpassword) {
+            document.getElementById("errPhone").innerHTML += "<br>";
+            document.getElementById("errPhone").innerHTML += "Passwords don't match!";
+            ans=0;
         }
-            
+        if(ans==1)
+        {
+            return true;
+        } 
+        return false;
     }
 </script>
 
