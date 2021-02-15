@@ -9,10 +9,12 @@
 </head>
 
 <body class="hero-image">
-   </div> <!-- Nav bar --> 
+   <!-- Nav bar --> 
    <!-- Nav bar finishh -->
    <!-- login section -->
-
+   <img src="images/masks2.webp" width="100%" height="90%"><br>
+   <img src="images/fancymask.jpg" width="100%"><br>
+   
    </section>
    <!-- login section finish -->
    <!-- footer section -->

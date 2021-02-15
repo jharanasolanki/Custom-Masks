@@ -18,7 +18,7 @@ body {margin:0;font-family:Helvetica}
 
 .topnav {
   overflow: hidden;
-  background-color: #343742;
+  background-color: #25262c;
 }
 
 .topnav a {
@@ -33,7 +33,7 @@ body {margin:0;font-family:Helvetica}
 
 .active {
    
-  background-color: #EF233C;
+  background-color: #33cad5;
 
   color: white;
 }
@@ -78,12 +78,12 @@ body {margin:0;font-family:Helvetica}
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #EF233C;
+  background-color: #33cad5;
   color: white;
 }
 
 .dropdown-content a:hover {
-  background-color:#EF233C;
+  background-color:#33cad5;
   color: white;
 }
 
