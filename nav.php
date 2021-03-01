@@ -6,7 +6,9 @@ session_start();
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
   <link rel="stylesheet" href="css/nav.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
   <style>
 
   </style>
@@ -14,8 +16,8 @@ session_start();
 
 <div class="topnav" id="myTopnav">
   <a href="index.php" class="active">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
+  <a href="makemasks.php">Make Mask</a>
+  <a href="catalog.php">Catalogue</a>
   <div class="dropdown">
     <button class="dropbtn">Dropdown
       <i class="fa fa-caret-down"></i>
