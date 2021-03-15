@@ -56,7 +56,7 @@
                     $imgname="images/masks/".$row['imagename'];
                     $name=$row['name'];
                     $price=$row['price'];
-                    $link="buymask.php?id=".$row['id'];
+                    $link="productpage.php?id=".$row['id']."&qty=1";
                     $id=$row['id'];
                     print <<< END
                     <div class="productdivtop">
@@ -87,7 +87,7 @@ END;
                     $imgname="images/masks/".$row['imagename'];
                     $name=$row['name'];
                     $price=$row['price'];
-                    $link="buymask.php?id=".$row['id'];
+                    $link="productpage.php?id=".$row['id']."&qty=1";
                     $id=$row['id'];
                     print <<< END
                     <div class="productdivtop">
@@ -117,7 +117,7 @@ END;
                     $imgname="images/masks/".$row['imagename'];
                     $name=$row['name'];
                     $price=$row['price'];
-                    $link="buymask.php?id=".$row['id'];
+                    $link="productpage.php?id=".$row['id']."&qty=1";
                     $id=$row['id'];
                     print <<< END
                     <div class="productdivtop">
@@ -174,6 +174,10 @@ END;
         if(document.getElementById("searchmask").innerHTML=="")
         {
             document.getElementById("searchmask").innerHTML="<h4>Not Found!</h4>";
+        }
+        function productPage(pid)
+        {
+            window.location.replace("productpage.php?id="+pid);
         }
         document.getElementById("showing").innerHTML=document.getElementById("searchmask").innerHTML;
     }

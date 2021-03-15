@@ -1,5 +1,8 @@
 <?php
-session_start();
+ if(!isset($_SESSION)) 
+ { 
+     session_start(); 
+ } 
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,7 +33,7 @@ session_start();
   </div>
   <div class="topnav-right">
 
-    <a href="#calander">Calander</a>
+    <a href="cart.php">Cart</a>
     <a href="#contact">Active jobs</a>
 
     <?php
