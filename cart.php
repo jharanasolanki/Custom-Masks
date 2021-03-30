@@ -118,7 +118,7 @@ END;
         }
         function buy(pid)
         {
-            window.location.replace("buyitem.php?id="+pid);
+            window.location.replace("buymask.php?id="+pid);
         }
         function deleteCart(pid)
         {

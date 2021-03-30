@@ -1,5 +1,4 @@
 <?php require 'config.php'; ?>
-<?php require 'nav.php' ?>
 <?php
     $qty=$_GET['qty'];
     $pid=$_GET['id'];
