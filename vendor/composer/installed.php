@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '8fabc27aa737d868858c24a2a03fb195bd8bd5e6',
+    'reference' => '6aff71ccc6dc02523bb39442151d7d8b532814d3',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '8fabc27aa737d868858c24a2a03fb195bd8bd5e6',
+      'reference' => '6aff71ccc6dc02523bb39442151d7d8b532814d3',
     ),
     'firebase/php-jwt' => 
     array (
@@ -91,6 +91,15 @@
       array (
       ),
       'reference' => '2209ddd84e7ef1256b7af205d0717fb62cfc9c33',
+    ),
+    'phpmailer/phpmailer' => 
+    array (
+      'pretty_version' => 'v6.3.0',
+      'version' => '6.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4a08cf4cdd2c38d12ee2b9fa69e5d235f37a6dcb',
     ),
     'phpseclib/phpseclib' => 
     array (
