@@ -13,6 +13,13 @@
     <!-- Nav bar -->
     <?php
     if (isset($_SESSION['username'])) {
+        if(!$_SESSION['accountid']==40)
+        {
+            header('Location:'.'index.php');
+        }
+    }
+    else
+    {
         header('Location:'.'index.php');
     }
     ?>
