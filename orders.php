@@ -19,7 +19,10 @@
     $sql="select car.id as prodid,car.date as date,cat.name as name,cat.price as price,cat.imagename as img,car.id as id,car.qty as qty,car.total as total from orders as car left join maskscart as cart on car.productid=cart.id left join maskcatalog as cat on cart.productid=cat.id and car.custid=$accountid where car.orderfrom='cart' and page='mask' and car.custid=$accountid;";
     $result2=$conn->query($sql);
 
-    $noitems=$result->num_rows+$result2->num_rows;
+    $sql="select car.id as prodid,car.date as date,cam.price as price,cam.img as img,car.id as id,car.qty as qty,car.total as total from orders as car left join custommask as cam on car.productid=cam.id where car.orderfrom='custom' and page='mask' and car.custid=$accountid;";
+    $result3=$conn->query($sql);
+    
+    $noitems=mysqli_num_rows($result)+mysqli_num_rows($result2)+mysqli_num_rows($result3);
 ?>
 
 <html>
@@ -29,6 +32,8 @@
     <body onload="calcTotal()">
         <div class="allitems">
         <?php
+        if(mysqli_num_rows($result)>0)
+        {
         while($row = $result->fetch_assoc()) 
         {
             $name=$row['name'];
@@ -68,6 +73,9 @@
         </div>
 END;
         } 
+    }
+        if(mysqli_num_rows($result2)>0)
+        {
         while($row = $result2->fetch_assoc()) 
         {
             $name=$row['name'];
@@ -107,6 +115,49 @@ END;
         </div>
 END;
         }
+    }
+        if(mysqli_num_rows($result3)>0)
+        {
+        while($row = $result3->fetch_assoc()) 
+        {
+            $name="Custom Mask";
+            $date=$row['date'];
+            $img=$row['img'];
+            $id=$row['id'];
+            $prodid=$row['id'];
+            $price=$row['price'];
+            $qty=$row['qty'];
+            $total=$row['total'];
+            $prodid=$row['prodid'];
+            $idq=$id."qty";
+            $idp=$id."price";
+            $idd=$id."dprice";
+            $idprod=$id."prod";
+            print <<< END
+            <div class="item">
+            <div class="left">
+                <img src="$img">
+            </div>
+            <div id="$idprod" hidden>$prodid</div>
+            <div class="right">
+                <div class="row">
+                    <div class="name">$name</div>
+                    <label class="name">$date</label>
+                </div>
+                <div id="$idp" hidden>$price</div>
+                <div class="row">
+                    <div class="price">$<label id="$idd" class="dprice">$total</label></div>
+                    <div class="qtydiv">
+                        <div class="qty">
+                            <input type="number" name="qty" value="$qty" id="$idq" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+END;
+        }
+    }
 ?>
         </div>
         <div class="totaldiv">

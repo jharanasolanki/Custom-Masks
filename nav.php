@@ -19,6 +19,7 @@
 
 <div class="topnav" id="myTopnav">
   <a href="index.php" class="active">Home</a>
+  <a href="aboutus.php">About us</a>
   <a href="makemasks.php">Make Mask</a>
   <a href="catalog.php">Catalogue</a>
   <?php
@@ -46,7 +47,6 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="profile.php">Profile</a>
       <a href="logout.php">Logout</a>
     </div>
   </div>

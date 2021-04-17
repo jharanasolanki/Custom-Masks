@@ -77,7 +77,7 @@ END;
                 <div class="grandtotal">Grand Total: <label>$</label><label id="gtotal"></label></div>
             </div>
             <div class="row">
-                <div class="buybtn" onclick="buy($id)">BUY ALL</div>
+                <div class="buybtn" onclick="buyall()">BUY ALL</div>
             </div>
         </div>  
     </body>

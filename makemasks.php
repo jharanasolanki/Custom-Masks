@@ -53,7 +53,6 @@
                     </div>
                     <!--back-product-view-->
                 </div>
-
                 <div class="img-wrapper" id="img-wrapper">
                     <div id="front-view">
                         <canvas id="front"></canvas>
@@ -622,6 +621,8 @@
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </a>
                     </div>
+                    <form name="imgForm">
+                    </form>
                     <div class="drag-drop-wrapper">
                         <div class="dgarImage dgarImageFront">
                             <input type="file" id="uploadImg" class="front" name="selectImg" />
@@ -872,8 +873,8 @@
     </div>
     <div class="bottom-control">
         <div class="bottom-control-left">
-            <div class="save-design">
-                <a id="saveImg" href="javascript: void(0)">Save</a>
+            <div class="save-design" onClick="download()">
+                <a id="download" download="customid.png">Save</a>
             </div>
             <div class="change-product">
                 <div class="acctual-product-image"></div>
@@ -885,8 +886,8 @@
                 </div>
             </div>
         </div>
-        <div class="bottom-control-right">
-            <a href="#" class="see-pricing">$ See Pricing</a>
+        <div class="bottom-control-right" onclick="buymask()">
+            <a class="see-pricing" onclick="buymask()">$ See Pricing</a>
         </div>
     </div>
     <div class="canvas-output">
@@ -897,9 +898,16 @@
        <!-- <div class="canvas-output-back">
             <canvas id="myCanvasExportBack" width="615" height="615"></canvas>
         </div>-->
+        <div hidden>
+            <img id="myImage" src="images/masks/plainmask.jpg" width="auto" height="auto">
+        </div>
+        <canvas id="downloadable"></canvas>
     </div>
-
-
+    <form name="imgForm" id="imgForm" method="post" action="buycustommask.php">
+    <input type="hidden" name="imgValue" id="imgValue">
+    <input type="hidden" name="qty" value="1">
+    <input type="hidden" name="id" value="4">
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <!-- <script type="text/javascript" src="http://fabricjs.com/lib/fabric.js"></script> -->
@@ -948,7 +956,26 @@
             let deleteBtn = '<a href="javascript: void(0)" class="deleteBtn" style="position:absolute;top:' + btnTop + 'px;left:' + btnLeft + 'px;cursor:pointer; "><i class="fa fa-times" aria-hidden="true"></i></a>';
             $("#back-view .canvas-container").append(deleteBtn);
         }
+        function download() {
+            
+
+            var download = document.getElementById("download");
+            var image = document.getElementById("front").toDataURL("image/png")
+                .replace("image/png", "image/octet-stream");
+            download.setAttribute("href", image);
+            //download.setAttribute("download","archive.png");
+            }
         let front = $('#front-view').css('display');
+
+        function buymask()
+        {
+
+            var img=document.getElementById("front").toDataURL("image/png")
+                .replace("image/png", "image/octet-stream");
+
+            document.getElementById("imgValue").value=img;
+            document.getElementById("imgForm").submit();
+        }
     </script>
     <script type="text/javascript" src="js/product-canvas.js"></script>
     <script type="text/javascript" src="js/tool-main.js"></script>

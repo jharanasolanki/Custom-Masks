@@ -1,4 +1,4 @@
-<?php require 'nav.php' ?>
+<?php require 'nav.php'; ?>
 <!DOCTYPE html>
 <html>
 
@@ -23,5 +23,5 @@
    </footer> <!-- footer section finish -->
    </div>
 </body>
-
 </html>
+<?php require 'footer.php'; ?>

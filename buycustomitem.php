@@ -17,17 +17,17 @@ $accountid=$_SESSION['accountid'];
 $pid=$_GET['pid'];
 $qty=$_GET["qty"];
 
-$sql="SELECT * from maskcatalog where id=$pid;";
+$sql="SELECT * from custommask where id=$pid;";
 $result=$conn->query($sql);
 $row = $result->fetch_assoc();
-$name=$row["name"];
+$name=$row["id"];
 $price=$row["price"];
 $amount=$qty*$price;
 
 $sql="insert into payments(payment_amount,qty,payment_status,itemid,page,custid,createdtime) values($amount,$qty,'Completed',$pid,'mask',$accountid,'".date('Y-m-d H:i:s')."');";
 $conn->query($sql);
 
-$sql="insert into orders(custid,productid,qty,price,total,page,orderfrom,date) values($accountid,$pid,$qty,$price,$amount,'mask','direct','".date('Y-m-d H:i:s')."');";
+$sql="insert into orders(custid,productid,qty,price,total,page,orderfrom,date) values($accountid,$pid,$qty,$price,$amount,'mask','custom','".date('Y-m-d H:i:s')."');";
 $conn->query($sql);
 
 $sql="SELECT * from customer where id=$accountid;";
