@@ -31,15 +31,15 @@
                     <div class="options-icon"></div>
                     <div class="options-value">Upload</div>
                 </div>
-                <div class="options" id="add-notes" data-src="add-notes-opt">
+                <!-- <div class="options" id="add-notes" data-src="add-notes-opt">
                     <div class="options-icon"></div>
                     <div class="options-value">Add notes</div>
-                </div>
-                <div class="options" id="change-product" data-src="change-product-opt">
+                </div> -->
+                <div class="options" id="change-product" data-src="change-product-opt" onclick="window.location.replace('makemasks.php')">
                     <div class="options-icon"></div>
-                    <div class="options-value">Change product</div>
+                    <div class="options-value">Start Over</div>
                 </div>
-                <a href="javascript: void(0)" class="start-over">or <span>Start Over</span></a>
+                
             </div>
 
             <div class="edit-area">

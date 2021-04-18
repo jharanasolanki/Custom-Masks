@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '6aff71ccc6dc02523bb39442151d7d8b532814d3',
+    'reference' => '065fde96b0b8df63c5f991a4b90eeaa6feb29e29',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '6aff71ccc6dc02523bb39442151d7d8b532814d3',
+      'reference' => '065fde96b0b8df63c5f991a4b90eeaa6feb29e29',
     ),
     'firebase/php-jwt' => 
     array (
@@ -64,12 +64,12 @@ private static $installed = array (
     ),
     'google/apiclient-services' => 
     array (
-      'pretty_version' => 'v0.158.0',
-      'version' => '0.158.0.0',
+      'pretty_version' => 'v0.168.0',
+      'version' => '0.168.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '859f9c95ed85df02370f355b69c0dcad99367728',
+      'reference' => '46b71684a100f3d976e0321cf24f487b314add68',
     ),
     'google/auth' => 
     array (
@@ -91,12 +91,12 @@ private static $installed = array (
     ),
     'guzzlehttp/promises' => 
     array (
-      'pretty_version' => '1.4.0',
-      'version' => '1.4.0.0',
+      'pretty_version' => '1.4.1',
+      'version' => '1.4.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => '60d379c243457e073cff02bc323a2a86cb355631',
+      'reference' => '8e7d04f1f6450fef59366c399cfad4b9383aa30d',
     ),
     'guzzlehttp/psr7' => 
     array (
@@ -118,21 +118,21 @@ private static $installed = array (
     ),
     'phpmailer/phpmailer' => 
     array (
-      'pretty_version' => 'v6.3.0',
-      'version' => '6.3.0.0',
+      'pretty_version' => 'v6.4.0',
+      'version' => '6.4.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '4a08cf4cdd2c38d12ee2b9fa69e5d235f37a6dcb',
+      'reference' => '050d430203105c27c30efd1dce7aa421ad882d01',
     ),
     'phpseclib/phpseclib' => 
     array (
-      'pretty_version' => '2.0.30',
-      'version' => '2.0.30.0',
+      'pretty_version' => '2.0.31',
+      'version' => '2.0.31.0',
       'aliases' => 
       array (
       ),
-      'reference' => '136b9ca7eebef78be14abf90d65c5e57b6bc5d36',
+      'reference' => '233a920cb38636a43b18d428f9a8db1f0a1a08f4',
     ),
     'psr/cache' => 
     array (
