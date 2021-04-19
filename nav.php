@@ -34,14 +34,16 @@
   ?>
   <div class="topnav-right">
 
-    <a href="cart.php">Cart</a>
-    <a href="orders.php">Orders</a>
+
 
     <?php
       if(isset($_SESSION['username']))
       {
         $uname=$_SESSION['username'];
         print <<< END
+        <a href="cart.php">Cart</a>
+    <a href="wishlist.php">Wishlist</a>
+    <a href="orders.php">Orders</a>
         <div class="dropdown">
     <button class="dropbtn">Hey $uname!
       <i class="fa fa-caret-down"></i>

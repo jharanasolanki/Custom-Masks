@@ -1,5 +1,14 @@
 <?php require 'nav.php' ?>
 <?php require 'config.php' ?>
+<?php
+    $accountid=$_SESSION['accountid'];
+    $sql = "select pid from maskwishlist where custid=$accountid";
+    $result = $conn->query($sql);
+    $wishes=array();
+    while( $row = mysqli_fetch_assoc( $result)){
+        array_push($wishes,$row['pid']);
+    }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -38,6 +47,8 @@
             </div>
         </div>
     </div>
+    <div hidden><img src="images/icons/wish.png" id="wishtemp"></div>
+    <div hidden><img src="images/icons/wishempty.png" id="unwishtemp"></div>
     <div class="allproductdiv">
 
     <div id="showing">
@@ -62,6 +73,20 @@
                     <div class="productdivtop">
                     <div class="productdiv">
                     <label class="productid" hidden>$id</label>
+                    END;                   
+                    if(in_array($id,$wishes))
+                    {
+                        print <<< END
+                        <div class="productwish" onclick="removeWish(this,$id)"><img src="images/icons/wish.png"></div>
+END; 
+                    }
+                    else
+                    {
+                        print <<< END
+                        <div class="productwish" onclick="addWish(this,$id)"><img src="images/icons/wishempty.png"></div>
+END; 
+                    }
+                    print <<< END
                     <img src="$imgname" class="productimage">
                     <div class="productname">$name</div>
                     <div class="productprice">$ $price</div>
@@ -93,6 +118,20 @@ END;
                     <div class="productdivtop">
                     <div class="productdiv">
                     <label class="productid" hidden>$id</label>
+                    END;                   
+                    if(in_array($id,$wishes))
+                    {
+                        print <<< END
+                        <div class="productwish" onclick="removeWish(this,$id)"><img src="images/icons/wish.png"></div>
+END; 
+                    }
+                    else
+                    {
+                        print <<< END
+                        <div class="productwish" onclick="addWish(this,$id)"><img src="images/icons/wishempty.png"></div>
+END; 
+                    }
+                    print <<< END
                     <img src="$imgname" class="productimage">
                     <div class="productname">$name</div>
                     <div class="productprice">$ $price</div>
@@ -123,6 +162,20 @@ END;
                     <div class="productdivtop">
                     <div class="productdiv">
                     <label class="productid" hidden>$id</label>
+                    END;                   
+                    if(in_array($id,$wishes))
+                    {
+                        print <<< END
+                        <div class="productwish" onclick="removeWish(this,$id)"><img src="images/icons/wish.png"></div>
+END; 
+                    }
+                    else
+                    {
+                        print <<< END
+                        <div class="productwish" onclick="addWish(this,$id)"><img src="images/icons/wishempty.png"></div>
+END; 
+                    }
+                    print <<< END
                     <img src="$imgname" class="productimage">
                     <div class="productname">$name</div>
                     <div class="productprice">$ $price</div>
@@ -166,7 +219,7 @@ END;
         document.getElementById("searchmask").innerHTML="";
         for(var i=0;i<products.length;i++)
         {
-            if(products[i].children[0].children[2].innerHTML.toUpperCase().includes(src.toUpperCase()))
+            if(products[i].children[0].children[3].innerHTML.toUpperCase().includes(src.toUpperCase()))
             {        
                 document.getElementById("searchmask").innerHTML+=products[i].innerHTML;
             }
@@ -180,6 +233,22 @@ END;
             window.location.replace("productpage.php?id="+pid);
         }
         document.getElementById("showing").innerHTML=document.getElementById("searchmask").innerHTML;
+    }
+    function addWish(current,pid)
+    {
+        var newEl=document.getElementById("wishtemp").cloneNode(true);
+        current.children[0].replaceWith(newEl);
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "addwishlist.php?pid=" + pid, true);
+        xmlhttp.send();
+    }
+    function removeWish(current,pid)
+    {
+        var newEl=document.getElementById("unwishtemp").cloneNode(true);
+        current.children[0].replaceWith(newEl);
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "deletewish.php?id=" + pid, true);
+        xmlhttp.send();
     }
 </script>
 </html>
