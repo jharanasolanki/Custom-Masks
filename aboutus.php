@@ -104,11 +104,10 @@ a:active {
 
 <div class="about-section">
   <h1>About Us Page</h1>
-  <p>Fabindia is India's largest private platform for products that are made from traditional techniques, skills and hand-based processes.
-
-Fabindia links over 55,000 craft based rural producers to modern urban markets, thereby creating a base for skilled, sustainable rural employment, and preserving India's traditional handicrafts in the process.
-
-Fabindia's products are natural, craft based, contemporary, and affordable.</p>
+  <p>Masketeers is a brand new startup which aims at decreasing this pandemic monster by supplying masks to the country. We have a range of masks options with abound variety. There is also an option for customizing your own mask! Add pictures and texts to make it fun and light!
+  </p>
+  <p>We provide fast delivery and an easy to access website. Stay tuned in for the Masketeers App. Cheers!
+  </p>
   <p></p>
 </div>
 
