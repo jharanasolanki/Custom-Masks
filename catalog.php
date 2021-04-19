@@ -1,6 +1,9 @@
 <?php require 'nav.php' ?>
 <?php require 'config.php' ?>
 <?php
+
+if(isset($_SESSION['username']))
+{
     $accountid=$_SESSION['accountid'];
     $sql = "select pid from maskwishlist where custid=$accountid";
     $result = $conn->query($sql);
@@ -8,6 +11,7 @@
     while( $row = mysqli_fetch_assoc( $result)){
         array_push($wishes,$row['pid']);
     }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,7 +77,9 @@
                     <div class="productdivtop">
                     <div class="productdiv">
                     <label class="productid" hidden>$id</label>
-                    END;                   
+                    END;   
+                    if(isset($wishes))                
+                    {
                     if(in_array($id,$wishes))
                     {
                         print <<< END
@@ -86,6 +92,13 @@ END;
                         <div class="productwish" onclick="addWish(this,$id)"><img src="images/icons/wishempty.png"></div>
 END; 
                     }
+                }
+                else
+                {
+                    print <<< END
+                    <div hidden></div>
+END;
+                }
                     print <<< END
                     <img src="$imgname" class="productimage">
                     <div class="productname">$name</div>
@@ -118,7 +131,9 @@ END;
                     <div class="productdivtop">
                     <div class="productdiv">
                     <label class="productid" hidden>$id</label>
-                    END;                   
+                    END;    
+                    if(isset($wishes))               
+                    {
                     if(in_array($id,$wishes))
                     {
                         print <<< END
@@ -131,6 +146,13 @@ END;
                         <div class="productwish" onclick="addWish(this,$id)"><img src="images/icons/wishempty.png"></div>
 END; 
                     }
+                }
+                else
+                {
+                    print <<< END
+                    <div hidden></div>
+END;
+                }
                     print <<< END
                     <img src="$imgname" class="productimage">
                     <div class="productname">$name</div>
@@ -162,7 +184,9 @@ END;
                     <div class="productdivtop">
                     <div class="productdiv">
                     <label class="productid" hidden>$id</label>
-                    END;                   
+                    END;   
+                    if(isset($wishes))                
+                    {
                     if(in_array($id,$wishes))
                     {
                         print <<< END
@@ -175,6 +199,13 @@ END;
                         <div class="productwish" onclick="addWish(this,$id)"><img src="images/icons/wishempty.png"></div>
 END; 
                     }
+                }
+                else
+                {
+                    print <<< END
+                    <div hidden></div>
+END;
+                }
                     print <<< END
                     <img src="$imgname" class="productimage">
                     <div class="productname">$name</div>

@@ -14,7 +14,7 @@ session_start();
     }
     if(!isset($_GET['pid']))
     {
-        header('Location:'.'catalogue.php');
+        header('Location:'.'catalog.php');
     }
     $accountid=$_SESSION['accountid'];
     $pid=$_GET['pid'];
