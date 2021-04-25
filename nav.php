@@ -29,6 +29,7 @@
         {
           echo "<a href='addmask.php'>Add Inventory</a>";
           echo "<a href='sendmailfrontend.php'>Send Emails</a>";
+          echo "<a href='charts.php'>Charts</a>";
         }
       }
   ?>
