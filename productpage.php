@@ -38,7 +38,7 @@
     $description=$row["description"];
     $imgname="images/masks/".$row['imagename'];
     $accountid=$_SESSION['accountid'];
-    $sql = "select pid from grocerywishlist where custid=$accountid";
+    $sql = "select pid from maskwishlist where custid=$accountid";
     $result = $conn->query($sql);
     $wishes=array();
     while( $row = mysqli_fetch_assoc( $result)){
