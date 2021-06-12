@@ -1,0 +1,76 @@
+.completediv
+{
+    height:98%;
+    width:98%;
+    margin: 1%;
+}
+.topprofilediv
+{
+    height: 40%;
+    width: 100%;
+}
+.bottomprofilediv
+{
+    height: 60%;
+    width: 100%;
+}
+.profilediv
+{
+    float:left;
+    border-radius: 25px;
+    background-color: #343742;
+    color:white;
+    height: 90%;
+    width:31%;
+    margin: 1%;
+}
+.profileoptions
+{
+    border-radius: 25px;
+    background-color: #343742;
+    height: 90%;
+    width: 20%;
+    float: left;
+    margin: 1%;
+    padding-top: 1%;
+}
+.profilebuttons
+{
+    float:left;
+    text-align: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 25%;
+    padding-right: 25%;
+    margin: 1%;
+    border-radius: 25px;
+}
+.profilebuttonstext
+{
+    color:white;
+    float:left;
+}
+.profilebuttonsimg
+{
+    float:left;
+    height:17%;
+    width:17%;
+}
+.profilebuttons:hover
+{
+    background-color: #aae9ee;
+}
+.profilebuttons:hover >.profilebuttonstext
+{
+    background-color: #aae9ee;
+    color:black;
+}
+.profileview
+{
+    float:left;
+    border-radius: 25px;
+    height: 90%;
+    width: 75%;
+    margin: 1%;
+    background-color:#aae9ee;
+}

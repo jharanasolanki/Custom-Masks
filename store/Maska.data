@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<chartdata>
+<col>
+<source>ADatabase</source>
+<ssl/>
+<servername>server name</servername>
+<username>username</username>
+<password>password</password>
+<dbname>dbname</dbname>
+<dbconnected>1</dbconnected>
+
+
+
+
+
+
+
+
+<title>Customer ID</title><orientation>v</orientation><dropdown>false</dropdown><legposition/><name>Customer ID</name><xaxistitle>Sales</xaxistitle><yaxistitle/><height/><width/><showgrid>true</showgrid><showline>true</showline>
+<rdbms>mysql</rdbms>
+<file/>
+<datalabel>false</datalabel><xaxis>SQL1:{col}custid{/col}{data}SELECT * FROM orders{/data}</xaxis><yaxis>SQL1:{col}total{/col}{data}SELECT * FROM orders{/data}</yaxis><xmodel/><xsort/><ymodel/><ysort/><sql>SELECT * FROM orders </sql><size/><maptype/><text/><tracename/><yntitle/><color>#2874b4</color><type>bar</type></col>
+<col><source>ADatabase</source><rdbms>mysql</rdbms><servername>server name</servername><ssl/><username>username</username><password>password</password><dbname>dbname</dbname><dbconnected>1</dbconnected><file/><title/><name>Customer Orders</name><xaxistitle/><yaxistitle/><height/><width/><datalabel>false</datalabel><showgrid>true</showgrid><showline>true</showline><orientation>v</orientation><dropdown>false</dropdown><legposition/><xaxis>SQL1:{col}name{/col}{data}SELECT * FROM customer{/data}</xaxis><yaxis>SQL1:{col}priority{/col}{data}SELECT * FROM customer{/data}</yaxis><xmodel/><xsort/><ymodel/><ysort/><sql>SELECT * FROM customer </sql><size/><maptype/><text/><tracename/><yntitle/><color>#33cad5</color><type>bar</type></col><col><source>ADatabase</source><rdbms>mysql</rdbms><servername>server name</servername><ssl/><username>username</username><password>password</password><dbname>dbname</dbname><dbconnected>1</dbconnected><file/><title>Order placed from</title><name>Order placed from</name><xaxistitle/><yaxistitle/><height/><width/><datalabel>false</datalabel><showgrid>true</showgrid><showline>true</showline><orientation>v</orientation><dropdown>false</dropdown><legposition/><xaxis>SQL1:{col}orderfrom{/col}{data}SELECT * FROM payments{/data}</xaxis><yaxis>SQL1:{col}qty{/col}{data}SELECT * FROM payments{/data}</yaxis><xmodel/><xsort/><ymodel/><ysort/><sql>SELECT * FROM payments </sql><size/><maptype/><text/><tracename/><yntitle/><color/><type>bar</type></col><col><source>ADatabase</source><rdbms>mysql</rdbms><servername>server name</servername><ssl/><username>username</username><password>password</password><dbname>dbname</dbname><dbconnected>1</dbconnected><file/><title/><name>Mask Wishlist</name><xaxistitle>Customer Id</xaxistitle><yaxistitle>No of Products</yaxistitle><height/><width/><datalabel>false</datalabel><showgrid>true</showgrid><showline>true</showline><orientation>v</orientation><dropdown>false</dropdown><legposition/><xaxis>SQL1:{col}accountid{/col}{data}SELECT * FROM maskscart{/data}</xaxis><yaxis>SQL1:{col}qty{/col}{data}SELECT * FROM maskscart{/data}</yaxis><xmodel/><xsort/><ymodel/><ysort/><sql>SELECT * FROM maskscart </sql><size/><maptype/><text/><tracename/><yntitle/><color>#33cad5</color><type>bar</type></col></chartdata>
